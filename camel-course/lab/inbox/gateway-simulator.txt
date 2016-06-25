@@ -1,0 +1,401 @@
+
+https://qasecommerce.cielo.com.br/servicos/ecommwsec.do
+
+
+VISA - 4012001037141112 - 05/2018 - 123
+
+AMEX -  
+
+
+
+#################################################[Autorizada e Captura]##################################################
+
+http://192.168.20.40/ntk/minhasvendas/venda/?venda=360e8d22-c7e2-4205-8656-da280890631e
+
+
+//-- XML ENTRADA
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<requisicao-transacao id="295283" versao="1.2.1">
+   <dados-ec>
+      <numero>1006993069</numero>
+      <chave>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3</chave>
+   </dados-ec>
+   <dados-portador>
+      <numero>4012001037141112</numero>
+      <validade>201805</validade>
+      <indicador>1</indicador>
+      <codigo-seguranca>123</codigo-seguranca>
+   </dados-portador>
+   <dados-pedido>
+      <numero>295283</numero>
+      <valor>1000</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-27T18:19:52</data-hora>
+      <descricao>1234</descricao>
+      <idioma>PT</idioma>
+      <soft-descriptor />
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>visa</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <url-retorno>http://189.57.19.164/gateway/transacao/cielo/notificacao/0da2e799-80f7-4da5-9201-02bef6097e44</url-retorno>
+   <autorizar>3</autorizar>
+   <capturar>false</capturar>
+</requisicao-transacao>
+
+
+//-- XML SAIDA SAIDA
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="300988">
+   <tid>1006993069000640BC0A</tid>
+   <pan>SkPlaMmxRwnNPUPzyaS+Dil5bIbnQ6kjIah44nCugrI=</pan>
+   <dados-pedido>
+      <numero>300988</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-26T19:37:52.390-03:00</data-hora>
+      <descricao>1461710257889</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>amex</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>6</status>
+   <autenticacao>
+      <codigo>6</codigo>
+      <mensagem>Transacao sem autenticacao</mensagem>
+      <data-hora>2016-04-26T19:37:52.398-03:00</data-hora>
+      <valor>100</valor>
+      <eci>7</eci>
+   </autenticacao>
+   <autorizacao>
+      <codigo>6</codigo>
+      <mensagem>TransaÃ§Ã£o autorizada</mensagem>
+      <data-hora>2016-04-26T19:37:52.401-03:00</data-hora>
+      <valor>100</valor>
+      <lr>00</lr>
+      <arp>123456</arp>
+      <nsu>556608</nsu>
+   </autorizacao>
+   <captura>
+      <codigo>6</codigo>
+      <mensagem>Transacao capturada com sucesso</mensagem>
+      <data-hora>2016-04-26T19:37:52.436-03:00</data-hora>
+      <valor>100</valor>
+   </captura>
+</transacao>
+
+########################################################[Autorizada e Nao Captura]##########################################################
+
+http://192.168.20.40/ntk/minhasvendas/venda/?venda=efa46969-dd39-4d52-a232-925d7a121538
+
+
+
+//-- XML SAIDA SAIDA
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="294491">
+   <tid>10069930690005CD710A</tid>
+   <pan>b1SQ6jpKCDt3n9C0dgD/ZkPQ1Bh+7aJESqr/CwP64P0=</pan>
+   <dados-pedido>
+      <numero>294491</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-03-15T15:26:47.697-03:00</data-hora>
+      <descricao>1458066402840</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>mastercard</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>4</status>
+   <autenticacao>
+      <codigo>4</codigo>
+      <mensagem>Transacao sem autenticacao</mensagem>
+      <data-hora>2016-03-15T15:26:47.714-03:00</data-hora>
+      <valor>100</valor>
+      <eci>0</eci>
+   </autenticacao>
+   <autorizacao>
+      <codigo>4</codigo>
+      <mensagem>TransaÃ§Ã£o autorizada</mensagem>
+      <data-hora>2016-03-15T15:26:47.718-03:00</data-hora>
+      <valor>100</valor>
+      <lr>00</lr>
+      <arp>123456</arp>
+      <nsu>084368</nsu>
+   </autorizacao>
+</transacao>
+
+
+
+
+########################################################[Cancelamento]##########################################################
+
+http://192.168.20.40/ntk/minhasvendas/logAdmin?id=7c5f627a-b47a-42f1-bc63-d35b73ff648c
+
+
+//-- XML SAIDA SAIDA
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="300995">
+   <tid>1006993069000640BF2A</tid>
+   <pan>SkPlaMmxRwnNPUPzyaS+Dil5bIbnQ6kjIah44nCugrI=</pan>
+   <dados-pedido>
+      <numero>300995</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-26T20:05:17.560-03:00</data-hora>
+      <descricao>1461711917544</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>amex</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>9</status>
+   <autenticacao>
+      <codigo>9</codigo>
+      <mensagem>Transacao sem autenticacao</mensagem>
+      <data-hora>2016-04-26T20:05:17.582-03:00</data-hora>
+      <valor>100</valor>
+      <eci>7</eci>
+   </autenticacao>
+   <autorizacao>
+      <codigo>9</codigo>
+      <mensagem>TransaÃ§Ã£o autorizada</mensagem>
+      <data-hora>2016-04-26T20:05:17.586-03:00</data-hora>
+      <valor>100</valor>
+      <lr>00</lr>
+      <arp>123456</arp>
+      <nsu>556658</nsu>
+   </autorizacao>
+   <captura>
+      <codigo>9</codigo>
+      <mensagem>Transacao capturada com sucesso</mensagem>
+      <data-hora>2016-04-26T20:05:39.529-03:00</data-hora>
+      <valor>100</valor>
+   </captura>
+   <cancelamentos>
+      <cancelamento>
+         <codigo>9</codigo>
+         <mensagem>Transacao cancelada com sucesso</mensagem>
+         <data-hora>2016-04-26T20:05:46.373-03:00</data-hora>
+         <valor>100</valor>
+      </cancelamento>
+   </cancelamentos>
+</transacao>
+
+
+
+
+
+
+########################################################[CONSULTA]##########################################################
+
+//-- XML ENTRADA
+
+<?xml version="1.0" encoding="UTF-8"?>
+<requisicao-consulta id="301001" versao="1.2.1">
+   <tid>10069930690006429A1A</tid>
+   <dados-ec>
+      <numero>1006993069</numero>
+      <chave>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3</chave>
+   </dados-ec>
+</requisicao-consulta>
+
+
+//-- XML SAIDA SAIDA AUTORIZACAO
+
+Operação: CONSULTA	Data: 2016-04-28 11:09:51	Usuário: ntk	Sessão: 0F2F298A30976E54361D1B594BFF2D41	Transação: 1b4fd70f-06ef-44e5-975d-2325e3abf13d
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="301001">
+   <tid>10069930690006429A1A</tid>
+   <pan>IqVz7P9zaIgTYdU41HaW/OB/d7Idwttqwb2vaTt8MT0=</pan>
+   <dados-pedido>
+      <numero>301001</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-28T11:08:01.223-03:00</data-hora>
+      <descricao>1234</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>visa</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>4</status>
+   <autenticacao>
+      <codigo>4</codigo>
+      <mensagem>Transacao sem autenticacao</mensagem>
+      <data-hora>2016-04-28T11:08:01.359-03:00</data-hora>
+      <valor>100</valor>
+      <eci>7</eci>
+   </autenticacao>
+   <autorizacao>
+      <codigo>4</codigo>
+      <mensagem>TransaÃ§Ã£o autorizada</mensagem>
+      <data-hora>2016-04-28T11:08:01.365-03:00</data-hora>
+      <valor>100</valor>
+      <lr>00</lr>
+      <arp>123456</arp>
+      <nsu>564257</nsu>
+   </autorizacao>
+</transacao>
+
+
+
+
+
+//-- XML SAIDA CAPTURA
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="301001">
+   <tid>10069930690006429A1A</tid>
+   <pan>IqVz7P9zaIgTYdU41HaW/OB/d7Idwttqwb2vaTt8MT0=</pan>
+   <dados-pedido>
+      <numero>301001</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-28T11:08:01.223-03:00</data-hora>
+      <descricao>1234</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>visa</bandeira>
+      <produto>1</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>6</status>
+   <autenticacao>
+      <codigo>6</codigo>
+      <mensagem>Transacao sem autenticacao</mensagem>
+      <data-hora>2016-04-28T11:08:01.359-03:00</data-hora>
+      <valor>100</valor>
+      <eci>7</eci>
+   </autenticacao>
+   <autorizacao>
+      <codigo>6</codigo>
+      <mensagem>TransaÃ§Ã£o autorizada</mensagem>
+      <data-hora>2016-04-28T11:08:01.365-03:00</data-hora>
+      <valor>100</valor>
+      <lr>00</lr>
+      <arp>123456</arp>
+      <nsu>564257</nsu>
+   </autorizacao>
+   <captura>
+      <codigo>6</codigo>
+      <mensagem>Transacao capturada com sucesso</mensagem>
+      <data-hora>2016-04-28T11:14:20.874-03:00</data-hora>
+      <valor>100</valor>
+   </captura>
+</transacao>
+
+
+########################################################[DEBITO]##########################################################
+
+
+//-- XML envio Gateway
+
+<tipoOperacao>2</tipoOperacao>
+<autenticar>1</autenticar>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<requisicao-transacao id="301002" versao="1.2.1">
+   <dados-ec>
+      <numero>1006993069</numero>
+      <chave>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3</chave>
+   </dados-ec>
+   <dados-portador>
+      <numero>401200******1112</numero>
+      <validade>201805</validade>
+      <indicador>1</indicador>
+      <codigo-seguranca>***</codigo-seguranca>
+   </dados-portador>
+   <dados-pedido>
+      <numero>301002</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-28T11:32:57</data-hora>
+      <descricao>1234</descricao>
+      <idioma>PT</idioma>
+      <soft-descriptor />
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>visa</bandeira>
+      <produto>A</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <url-retorno>http://189.57.19.163/gateway/notificacao/resultado/b25496d4-d7bf-4c49-9037-e1194628cf43</url-retorno>
+   <autorizar>1</autorizar>
+   <capturar>false</capturar>
+</requisicao-transacao>
+
+
+//-- XML retorno CIELO
+
+<?xml version="1.0" encoding="UTF-8"?>
+<transacao xmlns="http://ecommerce.cbmp.com.br" versao="1.2.1" id="301002">
+   <tid>1006993069000642A09A</tid>
+   <pan>IqVz7P9zaIgTYdU41HaW/OB/d7Idwttqwb2vaTt8MT0=</pan>
+   <dados-pedido>
+      <numero>301002</numero>
+      <valor>100</valor>
+      <moeda>986</moeda>
+      <data-hora>2016-04-28T11:33:12.154-03:00</data-hora>
+      <descricao>1234</descricao>
+      <idioma>PT</idioma>
+      <taxa-embarque>0</taxa-embarque>
+   </dados-pedido>
+   <forma-pagamento>
+      <bandeira>visa</bandeira>
+      <produto>A</produto>
+      <parcelas>1</parcelas>
+   </forma-pagamento>
+   <status>0</status>
+   <url-autenticacao>https://qasecommerce.cielo.com.br/web/index.cbmp?id=d594018566fd84da392955da064e4805</url-autenticacao>
+</transacao>
+
+
+
+336 + 420 = R$ 756,00
+
+
+30/04/2016 19:03:40.176 | ERROR [4EFE779231D30349EAC35DEBDCE9153A] ||  | br.com.ntk.listener.CallbackAsyncListener | AsyncListener Timeout
+
+
+Valor do pedido: para simular transação autorizada, use qualquer valor em que os dois últimos dígitos sejam zeros. 
+Do contrário, toda autorização será negada.
+
+2016-05-02 14:46:06.953  INFO 2762 --- [nio-8083-exec-1] br.com.gateway.simulator.ws.Rede         : TOTAL: 1.00
+
+
+
+
+
+
+
+
+
+

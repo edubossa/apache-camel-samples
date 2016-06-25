@@ -1,0 +1,127 @@
+Dutos e Filtros em Apache Camel - PG 37
+
+EIP - https://github.com/argonavisbr/EIP-Course
+
+
+1- Explique o pattern Canal de Mensagens (Message Channel).
+	R. A  comunicação  entre  aplicações  em  um  sistema  de  mensageria  é  realizada  através  de  canais,  dutos  virtuais  que  recebem  mensagens  de  um  ou  mais  remetentes  e  as  disponibiliza  para  um  ou  mais  destinatários.
+
+2- Quais os dois  padrões  relacionados  a  canais?
+	R. Canal  Ponto-a-Ponto (Point-to-Point Channel) e Canal Publica-Inscreve (Publish-Subscribe Channel). 
+
+3- Roteador de mensagens (Message Router)
+	R. Um roteador é um componente que altera ou define a rota por onde uma mensagem irá circular. Pode  filtrar  mensagens 
+	indesejadas, distribuir  mensagens  em  canais  diferentes, dividir uma mensagem em um ou mais canais, agregar mensagens de vários canais em um uso, etc. 
+
+4- Tradutor de mensagens (Message Translator). 
+	R. Um  tradutor  não  altera  rotas,  mas  pode  atuar  no  conteúdo  de  uma  mensagem  transformando  seus  dados. Pode transformar o formato dos dados, acrescentar dados, remover dados, etc. 
+
+5- Canal  de  Tipo-de-Dados  (Datatype  Channel)
+	R. Um  canal  que  permite  apenas  mensagens  de  um  determinado tipo.
+
+6- Canal  de  Mensagens  Inválidas  (Invalid  Message  Channel)
+	R. Canal  usado  como  repositoorio  de  mensagens que não puderam ser processadas por não serem válidas.
+	
+7- Canal de Mensagens Não-Entregues (Dead-Letter Channel)
+	R. Canal para onde são redirecionadas  mensagens que não puderam ser enviadas. 
+
+8- Canal de Mensageria em Java (JMS)
+	R. Em  JMS,  o  padrão  Message  Channel  é  representado  pela  interface  javax.jms.Destination.
+
+9- Canal de Mensageria em Apache Camel
+	R. Camel  não  implementa  Canal  de  Mensageria,  apenas  prove  uma  interface  para  acessá-los  através  de  Endpoints  (org.apache.Camel.Endpoint)  e  Componentes  (org.apache.camel.Component). 
+
+10- Canal de Mensageria com Spring Integration.
+	R. Spring  Integration  implementa  canais  de  Mensageria  através  da  interface  MessageChannel  (org.springframework.integration.MessageChannel).  No  XML  de  integração  usa-se  o  tag  <channel>  para  representar  um  canal. 
+
+11- Mensagem (Message)
+	R. Uma mensagem é essencial para encapsular informações que precisam ser transmitidas através de um  canal de mensageria. 
+
+12- Modelo  de  Dados  Canônico  (Canonical  Data  Model)
+	R. Descreve  um  esquema  de  dados  comum  compartilhado  por  remetentes  e  destinatários  que  facilita  o  transporte  de  dados  em  um  canal  ou  sistema. 
+
+13- Indicador  de  Formato  (Format  Indicator)
+	 R. Descreve  o  conteúdo  da  mensagem,  que  pode  ser  usado  para  validar  ou  rotear a mensagem. 
+
+14- Mensagem em Java (JMS)
+	R. O padrão Mensagem é representado em Java através da interface javax.jms.Message. 
+
+15- Mensagem em Apache Camel.
+	R. Camel  implementa  este  padrão  através  de  duas  interfaces:  org.apache.camel.Message  e  org.apache.camel.Exchange. Um ou mais objetos Message podem ser obtidos a partir de um Exchange. 
+
+16- Mensagem em Spring Integration.
+	R. Spring  Integration  representa  o  padrão  Mensagem  através  da  interface  org.springframework.messaging.Message,  que  é  um  empacotador  genérico  para  qualquer  objeto  Java. 
+
+17- Dutos e filtros (Pipes and Filters)
+	R. Dutos e Filtros é um padrão de arquitetura que permite que tarefas em uma rota de integração sejam  distribuídas  para  componentes  dedicados,  interligados  por  canais,  permitindo  maior  reuso,  menor acoplamento  e  maior  flexibilidade.
+
+18- Dutos e Filtros em Java (JMS)
+	R. Não  há  uma  implementação  de  Dutos  e  Filtros  em  JMS.  O  padrão  deve  ser  construído  interligando  produtores  (javax.jms.MessageProducer)  e  consumidores  (javax.jms.MessageConsumer)  através  de  canais  (javax.jms.Destination).  
+
+19- Dutos e Filtros em Apache Camel
+	R. O  padrão  Dutos  e  Filtros  em  Camel  seria  implementado  através  de  vários  trechos  from()-to() sucessivos,  cada  um  usando  como  Endpoint  from()  de  partida,  o  Endpoint  to()  de  destino  do  trecho  anterior.
+
+20- Dutos e Filtros em Spring Integration
+	R. Para  Spring  Integration  qualquer  componente  que  se  comunica  com  um  canal,  seja  ele  um  roteador,  tradutor  ou  terminal  é  um  Filtro,  e  qualquer  canal  é  um  Duto.
+
+21- Roteador de mensagens (Message Router)
+	R. Um  roteador  é  necessário  para  distribuir  mensagens  em  canais  diferentes,  estabelecendo  rotas  diferentes para mensagens entre o remetente e o destinatário final das mensagens.
+
+22- Roteador de Mensagens em Java (JMS)
+	R. Roteadores  de  Mensagens  podem  ser  implementados  em  Java  através  de  uma  estrutura  condicional  que  envie  uma  mensagem  a  um  destino  ou  outro  dependendo  de  certas  condições.
+
+23- Roteador de Mensagens em Apache Camel
+	R. Camel implementa vários diferentes tipos de roteadores, podendo ser configurado em Java DSL através do método choice().
+
+24- Roteador de Mensagens em Spring Integration
+	R. O  tag  <router>  é  usado  para  configurar  vários  tipos  de  roteadores.
+
+25- Tradutor de mensagens (Message Translator)
+	R. Tradutores  são  usados  quando  é necessário  realizar  transformações  no  conteúdo  de  uma  mensagem,  para  que  possa  ser  processada  pelo  destinatário  ou  enviada  a  canais  que  requerem  um  formato  diferente. 
+
+26- Tradutor de Mensagens em Java (JMS)
+	R. Java oferece vários recursos para transformar dados. No entanto essa traducao e feita praticamente de forma manual com if e else.
+
+27- Tradutor de Mensagens em Apache Camel.
+	R. Camel  fornece  uma  infraestrutura  que  facilita  a  criação  e  o  reuso  de  componentes  de  transformação  em  vários  níveis.  A  transformação  no  nível  de  transporte  é  feita  implicitamente  pelos  componentes  que  interagem  com  o  mundo  externo  (Endpoints).  
+
+28- Tradutor de Mensagens em Spring Integration
+	R. É  possível  realizar  a  transformação  mostrada  acima  em  Spring  Integration  implementando  um  Transformer.
+
+29- Terminal de Mensageria (Messaging Endpoint).
+	R. Terminais de Mensageria são os Produtores e Consumidores de mensagens. São a interface de entrada   e saída de um sistema de mensageria com as aplicações que serão integradas. 
+
+30- Terminal de Mensageria em Java (JMS)
+	R. Os terminais de mensageria em JMS são representados pelos componentes que produzem e consomem  mensagens:  MessageConsumer  e  MessageProducer. 
+
+31- Terminal de Mensageria em Apache Camel
+	R. Terminais de Mensageria em Camel têm duas partes:  
+		• Endpoint,  que  funciona  como  um  canal  para  onde  podem  ser  enviadas  mensagens,  ou  que  produz mensagens, e 
+		• Component,  que  é  um  adaptador  que  converte  uma  fonte  ou  destino  externa  para  que  possa  participar da mensageria através do Camel. 
+
+32- Terminal de Mensageria em Spring Integration
+	R. Spring  provavelmente  considera  o  papel  Produtor/Consumidor  de  cada  componentes  e  assim  define todos eles como Endpoints. 
+
+33- 
+
+34-
+
+35-
+
+36-
+
+37-
+
+38-
+
+39-
+
+40-	
+
+
+
+
+
+
+
+

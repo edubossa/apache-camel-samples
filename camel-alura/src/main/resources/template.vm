@@ -1,0 +1,10 @@
+==============================================
+Data - ${headers.data}
+
+Valor - ${headers.valor}
+
+NSU - ${headers.nsu}
+
+COMPROVANTE DA TRANSACAO!
+==============================================
+${body}
